@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Connect 4</h1>
+    <div class="scoreboard">
+      <div><span class="dot red"></span>Red: <span id="score-red">0</span></div>
+      <div>Draws: <span id="score-draw">0</span></div>
+      <div><span class="dot yellow"></span>Yellow: <span id="score-yellow">0</span></div>
+    </div>
+    <p id="status" aria-live="polite"></p>
+    <div id="board" class="board" role="grid"></div>
+    <div class="controls">
+      <button id="new-game">New Game</button>
+      <button id="reset-scores">Reset Scores</button>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
