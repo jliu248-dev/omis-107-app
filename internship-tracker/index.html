@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Quick Add</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+  <script src="tracker.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Internship Quick Add</h1>
+
+    <section class="card" id="open-card">
+      <button id="open-file" class="primary">Open Internship_Tracker.xlsx</button>
+      <input type="file" id="file-input" accept=".xlsx" hidden>
+      <p id="file-status" class="muted">No file open yet.</p>
+    </section>
+
+    <form id="add-form" class="card" autocomplete="off">
+      <label for="company">Company</label>
+      <div class="row">
+        <input id="company" required placeholder="e.g. Google — press Enter to add" disabled>
+        <button type="submit" class="primary" id="add-btn" disabled>Add</button>
+      </div>
+
+      <details id="more">
+        <summary>More details (optional)</summary>
+        <div class="grid">
+          <label>Role title <input id="role"></label>
+          <label>Location <input id="location"></label>
+          <label>Status <select id="status"></select></label>
+          <label>Date applied <input type="date" id="applied"></label>
+          <label>Deadline <input type="date" id="deadline"></label>
+          <label>Job link <input type="url" id="link" placeholder="https://"></label>
+          <label class="wide">Notes <input id="notes"></label>
+        </div>
+      </details>
+      <p id="message" aria-live="polite"></p>
+    </form>
+
+    <section class="card">
+      <div class="row between">
+        <h2>In your tracker <span id="count" class="muted"></span></h2>
+        <button id="download" hidden>Download updated file</button>
+      </div>
+      <ol id="entries" reversed></ol>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

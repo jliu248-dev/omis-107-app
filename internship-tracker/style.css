@@ -1,0 +1,65 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f3f5f8;
+  color: #1d2433;
+}
+
+main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { margin: 0 0 16px; }
+h2 { margin: 0; font-size: 1.1rem; }
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.row { display: flex; gap: 8px; align-items: center; }
+.between { justify-content: space-between; }
+.muted { color: #6b7385; font-weight: normal; }
+
+label { display: block; font-weight: 600; font-size: 0.9rem; }
+input, select, button { font: inherit; }
+input, select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #c9cfda;
+  border-radius: 6px;
+  font-weight: normal;
+}
+#company { font-size: 1.2rem; padding: 12px; margin-top: 6px; }
+
+button {
+  padding: 8px 14px;
+  border: 1px solid #c9cfda;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+button.primary { background: #1f5fbf; border-color: #1f5fbf; color: #fff; }
+button:disabled { opacity: 0.5; cursor: default; }
+.row button.primary { padding: 12px 20px; margin-top: 6px; }
+
+details { margin-top: 12px; }
+summary { cursor: pointer; color: #1f5fbf; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.grid input, .grid select { margin-top: 4px; }
+.wide { grid-column: 1 / -1; }
+@media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+
+#message { margin: 10px 0 0; min-height: 1.2em; }
+.ok { color: #1a7f37; }
+.error { color: #c62828; }
+
+#entries { margin: 12px 0 0; padding-left: 28px; max-height: 360px; overflow-y: auto; }
+#entries li { padding: 4px 0; }
+.tag { font-size: 0.8rem; padding: 1px 8px; border-radius: 10px; background: #e8ecf3; }
+.tag[data-status="Interviewing"], .tag[data-status="OA/Assessment"] { background: #fff3c4; }
+.tag[data-status="Offer"], .tag[data-status="Accepted"] { background: #d4f5dc; }
+.tag[data-status="Rejected"], .tag[data-status="Withdrawn"] { background: #fbdcdc; }
