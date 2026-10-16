@@ -33,5 +33,5 @@ python3 add_internship.py path/to/Internship_Tracker.xlsx
 python3 add_internship.py -d         # also asks for role, location, status, dates, link, notes
 ```
 
-Type a company and press Enter. An empty line (or `q`) quits. Close the file in
+Type a company, press Enter, then type the role (or press Enter to skip it). An empty line (or `q`) quits. Close the file in
 Excel before running it, or the save will fail.

@@ -4,7 +4,7 @@
 Usage:
     python3 add_internship.py [path/to/Internship_Tracker.xlsx] [--details]
 
-Type a company name and press Enter; it's saved into the next empty row.
+Type a company name and its role (Enter to skip the role); it's saved into the next empty row.
 Press Enter on an empty line (or type q) to quit.
 """
 import argparse
@@ -149,7 +149,11 @@ def main():
             print(f"The tracker is full (rows {FIRST_ROW}-{LAST_ROW}).")
             break
 
-        details = ask_details() if args.details else {"applied": datetime.datetime.combine(datetime.date.today(), datetime.time())}
+        if args.details:
+            details = ask_details()
+        else:
+            details = {"role": ask("  Role title"),
+                       "applied": datetime.datetime.combine(datetime.date.today(), datetime.time())}
         add_row(ws, row, company, details)
         if save(wb, args.file):
             added += 1
