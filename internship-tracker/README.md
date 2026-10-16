@@ -20,3 +20,18 @@ Tracker sheet.
 - You're warned before adding a company that's already in the tracker.
 
 Your formulas, dropdowns, and color-coding in the spreadsheet are kept as-is.
+
+## Terminal version
+
+`add_internship.py` does the same thing from the command line and saves after
+every company. It needs Python 3 and openpyxl (`python3 -m pip install openpyxl`).
+
+```sh
+cd ~/Downloads                       # the folder with your tracker and the script
+python3 add_internship.py            # uses Internship_Tracker.xlsx in this folder
+python3 add_internship.py path/to/Internship_Tracker.xlsx
+python3 add_internship.py -d         # also asks for role, location, status, dates, link, notes
+```
+
+Type a company and press Enter. An empty line (or `q`) quits. Close the file in
+Excel before running it, or the save will fail.
